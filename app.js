@@ -3,7 +3,7 @@ const Mongoose = require("mongoose");
 //const student = require("./student");
 var studentModel = require("./student");
 var facultyModel = require("./dept");
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const {
   body,
   validationResult,
@@ -79,6 +79,6 @@ app.get("/students", async (req, res) => {
   }
 });
 
-app.listen(4000, (req, res) => {
+app.listen(PORT, (req, res) => {
   console.log(`Running on port :${PORT}`);
 });
